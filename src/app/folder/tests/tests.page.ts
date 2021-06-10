@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tests.page.scss'],
 })
 export class TestsPage implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.myDisplayer(this.myCalculator(5, 5));
   }
 
+  myDisplayer(some) {
+    console.log(some);
+  }
+
+  myCalculator(num1, num2) {
+    return num1 + num2;
+  }
 }
