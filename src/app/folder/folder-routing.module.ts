@@ -6,8 +6,18 @@ import { FolderPage } from './folder.page';
 const routes: Routes = [
   {
     path: '',
-    component: FolderPage
-  }
+    component: FolderPage,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+      },
+      {
+        path: 'tests',
+        loadChildren: () => import('./tests/tests.module').then( m => m.TestsPageModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({
