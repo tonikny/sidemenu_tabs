@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/shared/services/common.service';
 
 @Component({
   selector: 'app-tests',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tests.page.scss'],
 })
 export class TestsPage implements OnInit {
-  constructor() {}
+  constructor(private commonService: CommonService) {}
 
   ngOnInit() {
+    this.commonService.setTitle('Tests');
     this.myDisplayer(this.myCalculator(5, 5));
   }
 

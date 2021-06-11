@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'folder',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./folder/tabs/tabs.module').then( m => m.TabsPageModule)
   }
 ];
 

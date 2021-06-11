@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { CommonService } from '../shared/services/common.service';
 
 @Component({
   selector: 'app-folder',
@@ -12,17 +13,16 @@ export class FolderPage implements OnInit, OnDestroy {
   public folder = '';
   sub: Subscription;
 
-  constructor(private route: ActivatedRoute,) { }
+  constructor(private commonService: CommonService) { }
 
   ngOnInit() {
-    this.sub = this.route.queryParamMap
-    .subscribe(queryParamMap => {
-      this.folder = queryParamMap.has('id') ? queryParamMap.get('id') : 'Home';
-    });
+    // this.commonService.getTitle().subscribe((title: string) => {
+    //   console.log('title', title);
+    //   this.folder = title;
+    // });
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
   }
 
 }
