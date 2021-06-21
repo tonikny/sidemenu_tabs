@@ -25,7 +25,15 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import "src/theme/my-variables.scss";
+
+:root {
+    // --main-bg-color: brown;
+  }
+
 .subpage {
+    --main-bg-color: brown;
     margin-top: 56px;
     padding: 20px;
+    background-color: var(--main-bg-color);
 }

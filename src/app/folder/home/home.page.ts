@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from 'src/app/shared/interfaces/interfaces';
 import { CommonService } from 'src/app/shared/services/common.service';
+import { UsersService } from 'src/app/shared/services/users.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +10,19 @@ import { CommonService } from 'src/app/shared/services/common.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(private commonService: CommonService) { }
+  private users: IUser[];
+
+  constructor(private commonService: CommonService,
+    private usersService: UsersService) { }
 
   ngOnInit() {
     this.commonService.setTitle('Home');
+
+    this.usersService.getUsers().subscribe((users: IUser[]) => {
+      this.users = users;
+    }, (err) => {
+      console.error('err', err);
+    });
   }
 
 }

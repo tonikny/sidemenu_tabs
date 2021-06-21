@@ -1,10 +1,19 @@
 <ion-content [fullscreen]="true">
+  <div id="container" class="subpage">
+    <ion-list>
+      <ion-list-header>Users</ion-list-header>
 
-    <div id="container" class="subpage">
+      <ion-item *ngFor="let user of users; index as i">
+        <ion-avatar slot="start">
+          <img src="../assets/ball.png" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{user.apellidos}}</h2>
+          <h3>{{user.nombre}}</h3>
+          <small>{{user.email}}</small>
+        </ion-label>
+      </ion-item>
 
-        <p>HOLA HOME</p>
-
-    </div>
-
+    </ion-list>
+  </div>
 </ion-content>
-

@@ -1,0 +1,10 @@
+
+@import "src/theme/my-variables.scss";
+
+ion-list {
+    background-color: $mybackground;
+}
+
+ion-item {
+    --background: var(--main-bg-color);
+}
