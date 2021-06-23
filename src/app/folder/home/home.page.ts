@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IUser } from 'src/app/shared/interfaces/interfaces';
 import { CommonService } from 'src/app/shared/services/common.service';
 import { UsersService } from 'src/app/shared/services/users.service';
@@ -8,8 +8,9 @@ import { UsersService } from 'src/app/shared/services/users.service';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage implements OnInit, OnDestroy {
 
+  subscription: any;
   private users: IUser[];
 
   constructor(private commonService: CommonService,
@@ -18,11 +19,17 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.commonService.setTitle('Home');
 
-    this.usersService.getUsers().subscribe((users: IUser[]) => {
+    this.subscription = this.usersService.getUsers().subscribe((users: IUser[]) => {
       this.users = users;
     }, (err) => {
       console.error('err', err);
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }

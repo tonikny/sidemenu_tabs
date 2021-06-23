@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonService } from 'src/app/shared/services/common.service';
 
 @Component({
@@ -8,28 +8,40 @@ import { CommonService } from 'src/app/shared/services/common.service';
 })
 export class Tab2Page implements OnInit {
 
+  // @ViewChild('test') test2: HTMLInputElement;
+
+  info: string;
+  infoChild: string;
+  dataFromTab2: string;
+
   constructor(private commonService: CommonService) {}
 
   ngOnInit(): void {
     console.log('test2');
-
   }
 
-  
-ionViewWillEnter() {
-  console.log('ionViewWillEnter');  
-}
+  setInfo(test: HTMLInputElement): void {
+    this.info = test.value;
+  }
 
-ionViewDidEnter() {
-  console.log('ionViewDidEnter');  
-}
+  setChildWord(event) {
+    console.log(event);
+    this.infoChild = event;
+  }
 
-ionViewWillLeave() {
-  console.log('ionViewWillLeave');  
-}
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+  }
 
-ionViewDidLeave() {
-  console.log('ionViewDidLeave');  
-}
+  ionViewDidEnter() {
+    this.dataFromTab2 = this.commonService.getCommonData();
+  }
 
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave');
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
 }

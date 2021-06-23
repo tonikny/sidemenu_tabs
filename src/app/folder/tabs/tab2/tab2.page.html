@@ -13,6 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
+  <h1>{{dataFromTab2}}</h1>
+
   <h1>Tab 2</h1>
+
+  <input id="test" #test type="text">
+  <button (click)="setInfo(test)">Call</button>
+  <p>Dad's word: {{info}}</p>
+
+  <app-test [textoPadre]='info' (textoHijo)='setChildWord($event)'></app-test>
+
+  <p>My son's word: {{infoChild}}</p>
 
 </ion-content>

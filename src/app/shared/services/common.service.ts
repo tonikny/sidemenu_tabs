@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 export class CommonService {
 
   title = '';
+  commonData = '';
 
   constructor() { }
 
@@ -22,6 +23,14 @@ export class CommonService {
     //     observer.next(this.title);
     // });
     // return studentsObservable;
+  }
+
+  setCommonData(txt: string) {
+    this.commonData = txt;
+  }
+
+  getCommonData() {
+    return this.commonData;
   }
 
 }

@@ -27,13 +27,23 @@
 
 @import "src/theme/my-variables.scss";
 
-:root {
-    // --main-bg-color: brown;
-  }
+$mybackground: #2b2200;
 
 .subpage {
     --main-bg-color: brown;
     margin-top: 56px;
     padding: 20px;
-    background-color: var(--main-bg-color);
+    background-color: $mybackground;
 }
+
+
+// :root {
+//   --main-bg-color: brown;
+// }
+
+// .subpage {
+//     --main-bg-color: brown;
+//     margin-top: 56px;
+//     padding: 20px;
+//     background-color: var(--main-bg-color);
+// }
