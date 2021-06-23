@@ -5,6 +5,6 @@
 1. estils
 2. sidemenu i tabs
 3. comunicació entre components:
-    *input-output
-    *serveis
-    *subject
+    * input-output
+    * serveis
+    * subject
