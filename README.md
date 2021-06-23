@@ -1,10 +1,10 @@
 # sidemenu_tabs
 
-Aquest projecte inclou:
+## Aquest projecte inclou:
 
-*estils
-*sidemenu i tabs
-*comunicació entre components:
+1. estils
+2. sidemenu i tabs
+3. comunicació entre components:
     *input-output
     *serveis
     *subject
