@@ -27,23 +27,51 @@
 
 @import "src/theme/my-variables.scss";
 
-$mybackground: #2b2200;
-
-.subpage {
-    --main-bg-color: brown;
-    margin-top: 56px;
-    padding: 20px;
-    background-color: $mybackground;
-}
-
-
-// :root {
-//   --main-bg-color: brown;
-// }
 
 // .subpage {
-//     --main-bg-color: brown;
 //     margin-top: 56px;
 //     padding: 20px;
-//     background-color: var(--main-bg-color);
+//     background-color: $mybackground;
+// }
+
+
+:root {
+    --mi-variable-cifo: rgba(214, 81, 81, 0.644);
+    --mi-alert-color: rgb(189, 7, 113);
+    --mi-ok-color: rgb(12, 160, 12);
+    --mi-ko-color: rgb(119, 5, 5);
+}
+
+.modal-alert {
+    font: 200;
+    padding: 15px;
+    color: var(--mi-alert-color);
+}
+
+.modal-alert-grave {
+    font-weight: bolder;
+    font-size: 52px;
+    color: var(--mi-alert-color);
+}
+
+.mypage {
+    --mi-variable-cifo: yellow
+}
+
+.subpage {
+    --mi-variable-cifo: blue;
+}
+
+.subpage {
+    margin-top: 56px;
+    padding: 20px;
+    background-color: var(--mi-variable-cifo);
+}
+
+// .web-component-ionic-wrapper {
+//     --mi-margin-cifo: 15px;
+// }
+
+// .web-component-ionic {
+//     margin: var(--mi-margin-cifo);
 // }
