@@ -8,3 +8,4 @@
     * input-output
     * serveis
     * subject
+    * ionic storage
