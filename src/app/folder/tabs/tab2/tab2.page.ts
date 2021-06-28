@@ -34,7 +34,9 @@ export class Tab2Page implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.dataFromTab2 = this.commonService.getCommonData();
+    this.commonService.getCommonData().then((result) => {
+      this.dataFromTab2 = result;
+    });
   }
 
   ionViewWillLeave() {

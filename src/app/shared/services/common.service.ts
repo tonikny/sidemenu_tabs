@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,17 @@ export class CommonService {
 
   title = '';
   commonData = '';
+  mystorage: Storage | null = null;
 
-  constructor() { }
+  constructor(private storage: Storage) {
+    this.init();
+  }
+  
+  async init() {
+    // If using, define drivers here: await this.storage.defineDriver(/*...*/);
+    const storage = await this.storage.create();
+    this.mystorage = storage;
+  }
 
   setTitle(title: string): void {
     console.log('setting title', title);
@@ -26,11 +36,14 @@ export class CommonService {
   }
 
   setCommonData(txt: string) {
-    this.commonData = txt;
+    this.mystorage.set('txt', txt);
+    // this.commonData = txt;
   }
 
-  getCommonData() {
-    return this.commonData;
+  async getCommonData() {
+    // return this.commonData;
+    const result = await this.mystorage.get('txt');
+    return result;
   }
 
 }
