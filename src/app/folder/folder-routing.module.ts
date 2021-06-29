@@ -19,6 +19,18 @@ const routes: Routes = [
       {
         path: 'tabs',
         loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+      },
+      {
+        path: 'database/list',
+        loadChildren: () => import('./database/list/list.module').then( m => m.ListPageModule)
+      },
+      {
+        path: 'database/create',
+        loadChildren: () => import('./database/create/create.module').then( m => m.CreatePageModule)
+      },
+      {
+        path: 'database/update/:id',
+        loadChildren: () => import('./database/update/update.module').then( m => m.UpdatePageModule)
       }
     ]
   },

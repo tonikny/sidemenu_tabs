@@ -13,7 +13,8 @@ export class AppComponent implements OnInit, OnDestroy {
   public appPages = [
     { title: 'Home', url: '/folder/home', icon: 'mail' },
     { title: 'Tests', url: '/folder/tests', icon: 'footsteps' },
-    { title: 'Tabs', url: '/folder/tabs', icon: 'swap-horizontal' }
+    { title: 'Tabs', url: '/folder/tabs', icon: 'swap-horizontal' },
+    { title: 'Database', url: '/folder/database/list', icon: 'server' }
   ];
 
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
