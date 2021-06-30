@@ -3,10 +3,9 @@ import { Observable } from 'rxjs';
 import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommonService {
-
   title = '';
   commonData = '';
   mystorage: Storage | null = null;
@@ -14,7 +13,7 @@ export class CommonService {
   constructor(private storage: Storage) {
     this.init();
   }
-  
+
   async init() {
     // If using, define drivers here: await this.storage.defineDriver(/*...*/);
     const storage = await this.storage.create();
@@ -46,4 +45,11 @@ export class CommonService {
     return result;
   }
 
+  async getDataByPromiseExample() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('ok');
+      }, 3000);
+    });
+  }
 }

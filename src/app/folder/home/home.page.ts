@@ -11,19 +11,42 @@ import { UsersService } from 'src/app/shared/services/users.service';
 export class HomePage implements OnInit, OnDestroy {
 
   subscription: any;
-  private users: IUser[];
+  private users: IUser[] = [];
 
   constructor(private commonService: CommonService,
     private usersService: UsersService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    // const data = await this.commonService.getDataByPromiseExample();
+    // console.log('promise result: ', data);
+
+    const data = await this.callPromise();
+    console.log('promise result: ', data);
+
+    // this.commonService.getDataByPromiseExample().then((result) => {
+    //   const data2 = result;
+    //   console.log('promise result: ', data2);
+    // }, (err) => {
+    //   console.error('error', err);
+    // });
+
     this.commonService.setTitle('Home');
+
+    console.log('test 1', this.users);
 
     this.subscription = this.usersService.getUsers().subscribe((users: IUser[]) => {
       this.users = users;
+      console.log('test 2', this.users);
+      console.log('test 3', this.users);
     }, (err) => {
       console.error('err', err);
     });
+
+  }
+
+  async callPromise() {
+    return await this.commonService.getDataByPromiseExample();
   }
 
   ngOnDestroy(): void {
