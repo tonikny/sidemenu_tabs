@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/shared/services/common.service';
+import { TestsService } from './services/tests.service';
 
 @Component({
   selector: 'app-tests',
@@ -7,11 +8,21 @@ import { CommonService } from 'src/app/shared/services/common.service';
   styleUrls: ['./tests.page.scss'],
 })
 export class TestsPage implements OnInit {
-  constructor(private commonService: CommonService) {}
+  constructor(
+    private commonService: CommonService,
+    private testsService: TestsService
+  ) {}
 
   ngOnInit() {
     this.commonService.setTitle('Tests');
-    this.myDisplayer(this.myCalculator(5, 5));
+    // this.myDisplayer(this.myCalculator(5, 5));
+    // this.testCors();
+  }
+
+  testCors() {
+    this.testsService.getCatastroStuff().subscribe((result) => {
+      console.log(result);
+    });
   }
 
   myDisplayer(some) {
