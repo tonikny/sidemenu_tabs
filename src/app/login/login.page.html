@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item> 
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <p style="text-align: center; color: rgb(93, 104, 110); font-size: small;" (click)="goToRegistrationPage()">I'm new here</p>
+
+  <hr/>
+
+  <div style="padding: 50px;">
+    <form>
+      <ion-row>
+        <ion-col> 
+          <ion-button 
+          type="submit" 
+          color="danger"
+          (click)="googleAuth()" 
+          expand="block">
+            Login with Google
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+
+</ion-content>
