@@ -9,3 +9,6 @@
     * serveis
     * subject
     * ionic storage
+4. els tests de promises y asyncs
+5. login i sessió firebase
+6. firebase database
