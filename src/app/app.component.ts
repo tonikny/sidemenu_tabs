@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { MessageService } from './shared/services/message.service';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -31,6 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
       console.log('message received!', message);
       this.menutitle = message.text;
     });
+
   }
 
   logoff() {
