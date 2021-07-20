@@ -46,7 +46,7 @@ export class AuthenticationService {
   sendVerificationMail() {
     return this.ngFireAuth.currentUser.then(u => u.sendEmailVerification())
     .then(() => {
-      this.router.navigate(['verify-email']);
+      this.router.navigate(['login/verify-email']);
     });
   }
 
@@ -87,9 +87,10 @@ export class AuthenticationService {
       .signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.setUserData(result.user).then(() => {
+            this.router.navigate(['folder/home']);
+          });
         });
-        this.setUserData(result.user);
       })
       .catch((error) => {
         window.alert(error);
