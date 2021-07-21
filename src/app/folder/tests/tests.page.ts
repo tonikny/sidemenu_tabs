@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/shared/services/common.service';
 import { TestsService } from './services/tests.service';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-tests',
@@ -8,14 +9,19 @@ import { TestsService } from './services/tests.service';
   styleUrls: ['./tests.page.scss'],
 })
 export class TestsPage implements OnInit {
+
+  text = 'Hola';
+  imgurl = 'https://www.publicdomainpictures.net/pictures/250000/velka/eye-chart-test-vintage.jpg';
+  link = 'https://www.publicdomainpictures.net/pictures/250000/velka/eye-chart-test-vintage.jpg';
+
   constructor(
     private commonService: CommonService,
-    private testsService: TestsService
+    private testsService: TestsService,
+    private socialSharing: SocialSharing
   ) {}
 
   ngOnInit() {
     this.commonService.setTitle('Tests');
-    // this.myDisplayer(this.myCalculator(5, 5));
     // this.testCors();
   }
 
@@ -25,11 +31,10 @@ export class TestsPage implements OnInit {
     });
   }
 
-  myDisplayer(some) {
-    console.log(some);
+  shareGeneric(parameter){
+    const url = this.link;
+    const text = parameter+'\n';
+    this.socialSharing.share(text, 'MEDIUM', null, url);
   }
 
-  myCalculator(num1, num2) {
-    return num1 + num2;
-  }
 }

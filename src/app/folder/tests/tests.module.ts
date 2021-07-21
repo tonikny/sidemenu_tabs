@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TestsPageRoutingModule } from './tests-routing.module';
 
 import { TestsPage } from './tests.page';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TestsPage } from './tests.page';
     IonicModule,
     TestsPageRoutingModule
   ],
-  declarations: [TestsPage]
+  declarations: [TestsPage],
+  providers: [SocialSharing]
 })
 export class TestsPageModule {}

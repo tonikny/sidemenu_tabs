@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "641403588797",
-    "project_id": "test-e8e54",
-    "storage_bucket": "test-e8e54.appspot.com"
+    "project_number": "105462084238",
+    "firebase_url": "https://test-a70e3-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "test-a70e3",
+    "storage_bucket": "test-a70e3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:641403588797:android:6592076a9b0b0ce11267d4",
+        "mobilesdk_app_id": "1:105462084238:android:a63fd424d137efb8f5cfdf",
         "android_client_info": {
           "package_name": "io.ionic.starter"
         }
       },
       "oauth_client": [
         {
-          "client_id": "641403588797-7lcga62ogbjavv0r9u65uu4as3fjcqka.apps.googleusercontent.com",
+          "client_id": "105462084238-r2tgms1s3fm0t4ebupb94oroi54r51mm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "c8fe7850b04d391b4fa6e0327ab225c583388616"
+          }
+        },
+        {
+          "client_id": "105462084238-g2p6f853uj48c519roe5j5stcnekt1pm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCURBN6EljxO7yV4P-RSxWgZaHLUWIXr9g"
+          "current_key": "AIzaSyASyDjD7jSoAIxCIvLYK5_Dvx1vXmU2eH8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "641403588797-7lcga62ogbjavv0r9u65uu4as3fjcqka.apps.googleusercontent.com",
+              "client_id": "105462084238-g2p6f853uj48c519roe5j5stcnekt1pm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
