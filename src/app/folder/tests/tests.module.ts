@@ -8,6 +8,7 @@ import { TestsPageRoutingModule } from './tests-routing.module';
 
 import { TestsPage } from './tests.page';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Contacts } from '@ionic-native/contacts/ngx';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
     TestsPageRoutingModule
   ],
   declarations: [TestsPage],
-  providers: [SocialSharing]
+  providers: [SocialSharing, Contacts]
 })
 export class TestsPageModule {}

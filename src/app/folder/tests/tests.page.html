@@ -2,7 +2,7 @@
 
     <div id="container" class="subpage">
 
-        <h1>TESTING</h1>
+        <h1>SOCIAL SHARING</h1>
 
         <ion-header collapse="condense">
             <ion-toolbar>
@@ -27,6 +27,24 @@
               </ion-col>
             </ion-row>
           </ion-grid>  
+
+
+          <h1>CONTACTS</h1>
+
+          <ion-list>
+            <ion-list-header>Contactes que es diuen Jordi</ion-list-header>
+      
+            <ion-item *ngFor="let contact of myContacts; index as i">
+              <ion-avatar slot="start">
+                <img src="../assets/ball.png" />
+              </ion-avatar>
+              <ion-label>
+                <h2>{{contact.displayName}}</h2>
+              </ion-label>
+            </ion-item>
+      
+          </ion-list>
+
     </div>
 
 </ion-content>
